@@ -1,0 +1,33 @@
+{
+  "originHash" : "2c03ddd86ac35e24c3a71b69bbe20ca9936f15f85c7f1e2a21cd871d875859ca",
+  "pins" : [
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit.git",
+      "state" : {
+        "revision" : "2842e6e84e82eb9a8dac0100ca90d9444b0307f4",
+        "version" : "5.7.1"
+      }
+    },
+    {
+      "identity" : "swift-crypto",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-crypto.git",
+      "state" : {
+        "revision" : "60f13f60c4d093691934dc6cfdf5f508ada1f894",
+        "version" : "2.6.0"
+      }
+    },
+    {
+      "identity" : "uuid-kit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/baarde/uuid-kit.git",
+      "state" : {
+        "revision" : "db7e05a70ed2fff63f4ecc64ef61f85f999717d2",
+        "version" : "0.2.0"
+      }
+    }
+  ],
+  "version" : 3
+}
