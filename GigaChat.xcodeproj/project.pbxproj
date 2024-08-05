@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F70001942C60D8F000A1A445 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F70001932C60D8F000A1A445 /* SnapKit */; settings = {ATTRIBUTES = (Required, ); }; };
+		F70001992C60DA4D00A1A445 /* UUIDKit in Frameworks */ = {isa = PBXBuildFile; productRef = F70001982C60DA4D00A1A445 /* UUIDKit */; };
 		F708211D2C5FB7D300C1FA9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F708211C2C5FB7D300C1FA9E /* AppDelegate.swift */; };
 		F708211F2C5FB7D300C1FA9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F708211E2C5FB7D300C1FA9E /* SceneDelegate.swift */; };
 		F70821262C5FB7D500C1FA9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F70821252C5FB7D500C1FA9E /* Assets.xcassets */; };
 		F70821292C5FB7D500C1FA9E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F70821282C5FB7D500C1FA9E /* Base */; };
-		F70821332C5FBB0200C1FA9E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F70821322C5FBB0200C1FA9E /* SnapKit */; };
 		F70821382C5FBB4000C1FA9E /* ChatScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70821372C5FBB4000C1FA9E /* ChatScreenViewController.swift */; };
 		F708213B2C5FC13700C1FA9E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F708213A2C5FC13700C1FA9E /* APIClient.swift */; };
-		F70821412C5FE82E00C1FA9E /* UUIDKit in Frameworks */ = {isa = PBXBuildFile; productRef = F70821402C5FE82E00C1FA9E /* UUIDKit */; };
 		F70821432C5FF5C300C1FA9E /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70821422C5FF5C300C1FA9E /* Token.swift */; };
 		F70821452C5FFB0100C1FA9E /* ChatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70821442C5FFB0100C1FA9E /* ChatResponse.swift */; };
 		F70821482C60283C00C1FA9E /* Jost-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F70821472C60283C00C1FA9E /* Jost-VariableFont_wght.ttf */; };
@@ -45,8 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F70821412C5FE82E00C1FA9E /* UUIDKit in Frameworks */,
-				F70821332C5FBB0200C1FA9E /* SnapKit in Frameworks */,
+				F70001992C60DA4D00A1A445 /* UUIDKit in Frameworks */,
+				F70001942C60D8F000A1A445 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +138,8 @@
 			);
 			name = GigaChat;
 			packageProductDependencies = (
-				F70821322C5FBB0200C1FA9E /* SnapKit */,
-				F70821402C5FE82E00C1FA9E /* UUIDKit */,
+				F70001932C60D8F000A1A445 /* SnapKit */,
+				F70001982C60DA4D00A1A445 /* UUIDKit */,
 			);
 			productName = GigaChat;
 			productReference = F70821192C5FB7D300C1FA9E /* GigaChat.app */;
@@ -170,9 +170,8 @@
 			);
 			mainGroup = F70821102C5FB7D300C1FA9E;
 			packageReferences = (
-				F70821312C5FBB0200C1FA9E /* XCRemoteSwiftPackageReference "SnapKit" */,
-				F708213F2C5FE82E00C1FA9E /* XCRemoteSwiftPackageReference "uuid-kit" */,
-				F708214E2C602F0A00C1FA9E /* XCRemoteSwiftPackageReference "DWAnimatedLabel" */,
+				F70001922C60D8F000A1A445 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F70001972C60DA4D00A1A445 /* XCRemoteSwiftPackageReference "uuid-kit" */,
 			);
 			productRefGroup = F708211A2C5FB7D300C1FA9E /* Products */;
 			projectDirPath = "";
@@ -436,7 +435,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F70821312C5FBB0200C1FA9E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		F70001922C60D8F000A1A445 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -444,7 +443,7 @@
 				minimumVersion = 5.7.1;
 			};
 		};
-		F708213F2C5FE82E00C1FA9E /* XCRemoteSwiftPackageReference "uuid-kit" */ = {
+		F70001972C60DA4D00A1A445 /* XCRemoteSwiftPackageReference "uuid-kit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/baarde/uuid-kit.git";
 			requirement = {
@@ -452,25 +451,17 @@
 				minimumVersion = 0.2.0;
 			};
 		};
-		F708214E2C602F0A00C1FA9E /* XCRemoteSwiftPackageReference "DWAnimatedLabel" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Dywane/DWAnimatedLabel";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F70821322C5FBB0200C1FA9E /* SnapKit */ = {
+		F70001932C60D8F000A1A445 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F70821312C5FBB0200C1FA9E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = F70001922C60D8F000A1A445 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		F70821402C5FE82E00C1FA9E /* UUIDKit */ = {
+		F70001982C60DA4D00A1A445 /* UUIDKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F708213F2C5FE82E00C1FA9E /* XCRemoteSwiftPackageReference "uuid-kit" */;
+			package = F70001972C60DA4D00A1A445 /* XCRemoteSwiftPackageReference "uuid-kit" */;
 			productName = UUIDKit;
 		};
 /* End XCSwiftPackageProductDependency section */

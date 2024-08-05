@@ -1,17 +1,9 @@
-//
-//  ChatScreenViewController.swift
-//  GigaChat
-//
-//  Created by Gleb on 04.08.2024.
-//
-
 import UIKit
 import SnapKit
 
-
-
-
 final class ChatScreenViewController: UIViewController {
+    
+    //MARK: Properties
     
     let API = APIClient.shared
     
@@ -31,7 +23,7 @@ final class ChatScreenViewController: UIViewController {
         obj.textAlignment = .left
         obj.returnKeyType = .send
         obj.clearsOnInsertion = true
-        obj.clearsOnBeginEditing = true 
+        obj.clearsOnBeginEditing = true
         return obj
     }()
     
@@ -42,20 +34,34 @@ final class ChatScreenViewController: UIViewController {
         obj.layer.cornerRadius = 10
         obj.separatorStyle = .none
         obj.resignFirstResponder()
+        obj.showsVerticalScrollIndicator = false
         return obj
     }()
     
     private var models = [String]()
     
+    private var textFieldBottomConstraint: Constraint?
+    
+    //MARK: Lifecycle
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
         
         setupUI()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    deinit {
+        print("♦️ ChatVC deinited")
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    //MARK: Methods
+    
     private func setupUI() {
-        
         view.backgroundColor = .brandBG
         
         view.addSubview(chatTableView)
@@ -76,6 +82,7 @@ final class ChatScreenViewController: UIViewController {
             make.horizontalEdges.equalToSuperview().inset(20)
             make.top.equalTo(chatTableView.snp.bottom).offset(10)
             make.height.equalTo(50)
+            self.textFieldBottomConstraint = make.bottom.equalToSuperview().inset(20).constraint
         }
         
         userTextField.snp.makeConstraints { make in
@@ -101,25 +108,36 @@ final class ChatScreenViewController: UIViewController {
         }
     }
     
-    
-}
-
-
-extension ChatScreenViewController: UITextFieldDelegate {
-    
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
+            textFieldBottomConstraint?.update(inset: keyboardSize.height + 10)
+            UIView.animate(withDuration: 0.3) {
+                self.view.layoutIfNeeded()
             }
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
+        textFieldBottomConstraint?.update(inset: 20)
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
         }
     }
+    
+    private func scrollToBottom() {
+           let numberOfSections = chatTableView.numberOfSections
+           let numberOfRows = chatTableView.numberOfRows(inSection: numberOfSections-1)
+           
+           if numberOfRows > 0 {
+               let indexPath = IndexPath(row: numberOfRows-1, section: numberOfSections-1)
+               chatTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+           }
+       }
+}
+
+//MARK: TextField Delegate
+
+extension ChatScreenViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.1) {
@@ -128,7 +146,6 @@ extension ChatScreenViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
         if let text = textField.text, !text.isEmpty {
             models.append(text)
             chatTableView.reloadData()
@@ -136,22 +153,23 @@ extension ChatScreenViewController: UITextFieldDelegate {
                 switch result {
                 case .success(let output):
                     self?.models.append(output)
-                    
+//                    APIClient.shared.chatHistory.append(Message(role: "assistant", content: output))
                     DispatchQueue.main.async {
                         self?.chatTableView.reloadData()
+                        self?.scrollToBottom()
                     }
                 case .failure:
                     print("Failed")
                 }
             }
         }
-        
         textField.resignFirstResponder()
         textField.text = ""
         return true
     }
-    
 }
+
+//MARK: TableView Delegate, Datasource
 
 extension ChatScreenViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -173,15 +191,9 @@ extension ChatScreenViewController: UITableViewDelegate, UITableViewDataSource {
             cell.titleLabel.textAlignment = .right
             cell.titleLabel.textColor = .lightGray
             cell.titleLabel.font = FontBuilder.shared.jost(size: 16)
-//            cell.label.charInterval = 0
-            
         }
         return cell
     }
     
     
 }
-
-
-
-
