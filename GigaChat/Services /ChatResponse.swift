@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Message
 struct Message: Codable {
     let role: String
-    let content: String
+    var content: String
 }
 
 enum Role: String, Codable {
@@ -44,7 +44,7 @@ struct MessageResponse: Codable {
 
 // MARK: - Choice
 struct Choice: Codable {
-    let message: Message
+    var message: Message
     let index: Int
     let finish_reason: String
 //
@@ -63,4 +63,9 @@ struct Usage: Codable {
 //        case completionTokens
 //        case totalTokens
 //    }
+}
+
+enum ChatMessage {
+    case text(String)
+    case image(URL)
 }

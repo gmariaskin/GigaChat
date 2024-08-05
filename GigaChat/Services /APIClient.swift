@@ -12,14 +12,9 @@ class APIClient {
     private let authorizationData = "YzYzMmY1MGUtNjgxNC00MDkyLTllMDYtZGJjOTljNWMyOWE4OjdkMmUzMGZhLTdhNjQtNDYxZS04ZWZmLTEwN2FkZjhmODQ5Ng=="
     private let tokenURL = URL(string: "https://ngw.devices.sberbank.ru:9443/api/v2/oauth")!
     private let scope = "GIGACHAT_API_PERS"
-    private var userToken: String?
+    var userToken: String?
     
     private let messageURL = URL(string: "https://gigachat.devices.sberbank.ru/api/v1/chat/completions")!
-    
-    private let messages = [
-        ["role": "system", "content": "Ты профессиональный переводчик на английский язык. Переведи точно сообщение пользователя."],
-        ["role": "user", "content": "GigaChat — это сервис, который умеет взаимодействовать с пользователем в формате диалога, писать код, создавать тексты и картинки по запросу пользователя."]
-    ]
     
     private var tokenRefreshTimer: Timer?
     
@@ -32,9 +27,10 @@ class APIClient {
     }
     
     deinit {
-            tokenRefreshTimer?.invalidate()
-            tokenRefreshTimer = nil
-        }
+        print("♦️APIClient deinited")
+        tokenRefreshTimer?.invalidate()
+        tokenRefreshTimer = nil
+    }
     
     //MARK: Methods
     
@@ -102,51 +98,85 @@ class APIClient {
     }
     
     private func performSendMessage(text: String, completionHandler: @escaping (Result<MessageResponse, Error>) -> Void) {
-           guard let token = userToken else {
-               completionHandler(.failure(NSError(domain: "APIClient", code: 401, userInfo: [NSLocalizedDescriptionKey: "Token is missing"])))
-               return
-           }
-           
-           chatHistory.append(["role": "user", "content": text])
-           
-           let params: [String: Any] = [
-               "model": "GigaChat",
-               "messages": chatHistory,
-               "n": 1,
-               "stream": false,
-               "update_interval": 0
-           ]
-           
-           var request = URLRequest(url: messageURL)
-           request.httpMethod = "POST"
-           request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-           request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-           request.httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])
-           
-           URLSession.shared.dataTask(with: request) { data, response, error in
-               guard let data = data, error == nil else {
-                   print("Error: \(error!.localizedDescription)")
-                   completionHandler(.failure(error!))
-                   return
-               }
+        guard let token = userToken else {
+            completionHandler(.failure(NSError(domain: "APIClient", code: 401, userInfo: [NSLocalizedDescriptionKey: "Token is missing"])))
+            return
+        }
+        
+        chatHistory.append(["role": "user", "content": text])
+        
+        var params: [String: Any] = [
+            "model": "GigaChat",
+            "messages": chatHistory,
+            "n": 1,
+            "stream": false,
+            "update_interval": 0,
+        ]
+        
+        if containsWord("нарисуй", in: text.lowercased()) {
+            params["function_call"] = "auto"
+        }
+        
+        var request = URLRequest(url: messageURL)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print("❌Error: \(error!.localizedDescription)")
+                completionHandler(.failure(error!))
+                return
+            }
+            
+            do {
+                let response = try JSONDecoder().decode(MessageResponse.self, from: data)
+                
+                // Append the response message to chatHistory
+                if let responseMessage = response.choices?.first?.message.content {
+                    self.chatHistory.append(["role" :"assistant", "content":responseMessage])
+                    
+                    if let imageID = self.extractImageID(from: responseMessage) {
+                        FileDownloader.shared.downloadImage(withID: imageID, token: token) { [weak self] result in
+                            switch result {
+                            case .success(let fileURL):
+                            
+                                print("✅Image downloaded to: \(fileURL)")
+                            
+                            case .failure(let error):
+                                print("❌Failed to download image: \(error.localizedDescription)")
+                            }
+                        }
+                    }
+                }
+                
+                completionHandler(.success(response))
+                
                
-               do {
-                   let response = try JSONDecoder().decode(MessageResponse.self, from: data)
-                   
-                   // Append the response message to chatHistory
-                   if let responseMessage = response.choices?.first?.message.content {
-                       self.chatHistory.append(["role" :"assistant", "content":responseMessage])
-                   }
-                   
-                   completionHandler(.success(response))
-               } catch {
-                   print("Error decoding JSON: \(error)")
-                   if let dataString = String(data: data, encoding: .utf8) {
-                       print("JSON data: \(dataString)")
-                   }
-                   completionHandler(.failure(error))
-               }
-           }.resume()
-       }
-   }
+            } catch {
+                print("❌Error decoding JSON: \(error)")
+                if let dataString = String(data: data, encoding: .utf8) {
+                    print("JSON data: \(dataString)")
+                }
+                completionHandler(.failure(error))
+            }
+        }.resume()
+    }
+    
+    func containsWord(_ word: String, in string: String) -> Bool {
+        let pattern = "\\b\(word)\\b"
+        return string.range(of: pattern, options: .regularExpression) != nil
+    }
+    
+    private func extractImageID(from message: String) -> String? {
+        let pattern = "<img src=\"([^\"]+)\""
+        if let range = message.range(of: pattern, options: .regularExpression) {
+            return String(message[range])
+                .replacingOccurrences(of: "<img src=\"", with: "")
+                .replacingOccurrences(of: "\"", with: "")
+        }
+        return nil
+    }
+}
 
