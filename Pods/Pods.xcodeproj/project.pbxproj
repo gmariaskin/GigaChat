@@ -1,0 +1,633 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B9F9317C39589C23C9570125E9494EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		489C4E8E9096D99E09D47F7D2D80D645 /* DWHollowLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE09479E65C33BFB4D7B663FCFC2D75 /* DWHollowLabel.swift */; };
+		4F47CD0323F5A1E7AF969FE8B511865B /* DWAnimatedLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C01400CE19C8E54CC18490992384A34 /* DWAnimatedLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D22F5D132317AB565F5377FF46F659C /* DWAnimatedLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A5E5A818D5C3F7A2DBFD419BEB3E4160 /* DWAnimatedLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7FC90948CDE071C428AFC4A4ADFB3975 /* DWAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0203D8C505FC8DDD51C298C83C7D8E14 /* DWAnimator.swift */; };
+		8F2FB222C94F0F10348757441610D5CD /* DWAnimatedLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8759ABF3CCAD050D03F65607126B8ABB /* DWAnimatedLabel-dummy.m */; };
+		9E892AF946B11B3FA92130B6B15B5580 /* DWAnimatedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D04AADDD6CAE432A279B6498DA4875 /* DWAnimatedLabel.swift */; };
+		E305CDE03B64309D7768B5413640B8F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		FA6573063EB032B88A6F365E76404E9D /* Pods-GigaChat-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EC78441EDFFF48D4E2EC6EBA8952EE8 /* Pods-GigaChat-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FADC9DD30053F0B8F2538B318DF9AF66 /* Pods-GigaChat-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE973632C8026D0A9D17578DE70F5E34 /* Pods-GigaChat-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		35012DA836886D7A7503CFC131F9494A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 670BD8CE390D7D6DB204EA26D001123B;
+			remoteInfo = DWAnimatedLabel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0203D8C505FC8DDD51C298C83C7D8E14 /* DWAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DWAnimator.swift; path = DWAnimatedLabelDemo/DWAnimatedLabel/DWAnimator.swift; sourceTree = "<group>"; };
+		0481562D929B7E59552C0C3D2BA60943 /* Pods-GigaChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GigaChat.release.xcconfig"; sourceTree = "<group>"; };
+		0B572E88E94C393C22152690C1585829 /* Pods-GigaChat-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GigaChat-Info.plist"; sourceTree = "<group>"; };
+		0C5B5EA8B8195A37830546001D067A21 /* DWAnimatedLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DWAnimatedLabel.modulemap; sourceTree = "<group>"; };
+		1C01400CE19C8E54CC18490992384A34 /* DWAnimatedLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DWAnimatedLabel.h; path = DWAnimatedLabelDemo/DWAnimatedLabel/DWAnimatedLabel.h; sourceTree = "<group>"; };
+		1EC78441EDFFF48D4E2EC6EBA8952EE8 /* Pods-GigaChat-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GigaChat-umbrella.h"; sourceTree = "<group>"; };
+		3989E50088CEE20753DE3AF24D32B91E /* Pods-GigaChat-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GigaChat-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3DBBA2A7A087F8310E46AB2740F47B48 /* Pods-GigaChat.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GigaChat.modulemap"; sourceTree = "<group>"; };
+		45B1FA440F67A3032FD6AB59A66B9C61 /* DWAnimatedLabel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DWAnimatedLabel.debug.xcconfig; sourceTree = "<group>"; };
+		4E0EC0BC1FBCF83A40D0E5954C49F46A /* DWAnimatedLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DWAnimatedLabel-prefix.pch"; sourceTree = "<group>"; };
+		6B1E9EDFBCF7544B33F6FC02F5DD831D /* DWAnimatedLabel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DWAnimatedLabel-Info.plist"; sourceTree = "<group>"; };
+		71667FA1AB4DDE50D0BB221FB8BA3C5B /* Pods-GigaChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GigaChat.debug.xcconfig"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		74F2C0FB41F615A109D6E5F004547E90 /* Pods_GigaChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GigaChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ED5750665E8265CE7A77215CA946C89 /* Pods-GigaChat-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GigaChat-frameworks.sh"; sourceTree = "<group>"; };
+		82A83F7A0FE64F0E6E9EF71C40222210 /* Pods-GigaChat-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GigaChat-acknowledgements.plist"; sourceTree = "<group>"; };
+		8759ABF3CCAD050D03F65607126B8ABB /* DWAnimatedLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DWAnimatedLabel-dummy.m"; sourceTree = "<group>"; };
+		8A1C832AD7EA9EB3A0D91BEBECB45D86 /* DWAnimatedLabel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DWAnimatedLabel.release.xcconfig; sourceTree = "<group>"; };
+		9BE09479E65C33BFB4D7B663FCFC2D75 /* DWHollowLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DWHollowLabel.swift; path = DWAnimatedLabelDemo/DWAnimatedLabel/DWHollowLabel.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A4D04AADDD6CAE432A279B6498DA4875 /* DWAnimatedLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DWAnimatedLabel.swift; path = DWAnimatedLabelDemo/DWAnimatedLabel/DWAnimatedLabel.swift; sourceTree = "<group>"; };
+		A5E5A818D5C3F7A2DBFD419BEB3E4160 /* DWAnimatedLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DWAnimatedLabel-umbrella.h"; sourceTree = "<group>"; };
+		AE973632C8026D0A9D17578DE70F5E34 /* Pods-GigaChat-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GigaChat-dummy.m"; sourceTree = "<group>"; };
+		C5B3AA7481F2E2A217DB5A89EE960395 /* DWAnimatedLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DWAnimatedLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1664682451B5B2947F37D76A566FA2A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B9F9317C39589C23C9570125E9494EA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB115B96C8FB1FE6273E1AD578770A10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E305CDE03B64309D7768B5413640B8F5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		38132E6202CC7C04CF6AB41AEAA5B90D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F48B1E3AA81845BFC7DCCCF4A32E67D2 /* Pods-GigaChat */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		3D77DD2E630DF84B8D0B4649F5900DF6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D50DECFD5BB572ED9DB83212D70E7026 /* DWAnimatedLabel */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		802C3D4B07DBBAA2A2C90D378D871BC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C5B3AA7481F2E2A217DB5A89EE960395 /* DWAnimatedLabel.framework */,
+				74F2C0FB41F615A109D6E5F004547E90 /* Pods_GigaChat.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		83B1A0F565A49267660A876A7B221C24 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C5B5EA8B8195A37830546001D067A21 /* DWAnimatedLabel.modulemap */,
+				8759ABF3CCAD050D03F65607126B8ABB /* DWAnimatedLabel-dummy.m */,
+				6B1E9EDFBCF7544B33F6FC02F5DD831D /* DWAnimatedLabel-Info.plist */,
+				4E0EC0BC1FBCF83A40D0E5954C49F46A /* DWAnimatedLabel-prefix.pch */,
+				A5E5A818D5C3F7A2DBFD419BEB3E4160 /* DWAnimatedLabel-umbrella.h */,
+				45B1FA440F67A3032FD6AB59A66B9C61 /* DWAnimatedLabel.debug.xcconfig */,
+				8A1C832AD7EA9EB3A0D91BEBECB45D86 /* DWAnimatedLabel.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DWAnimatedLabel";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				3D77DD2E630DF84B8D0B4649F5900DF6 /* Pods */,
+				802C3D4B07DBBAA2A2C90D378D871BC1 /* Products */,
+				38132E6202CC7C04CF6AB41AEAA5B90D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D50DECFD5BB572ED9DB83212D70E7026 /* DWAnimatedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				1C01400CE19C8E54CC18490992384A34 /* DWAnimatedLabel.h */,
+				A4D04AADDD6CAE432A279B6498DA4875 /* DWAnimatedLabel.swift */,
+				0203D8C505FC8DDD51C298C83C7D8E14 /* DWAnimator.swift */,
+				9BE09479E65C33BFB4D7B663FCFC2D75 /* DWHollowLabel.swift */,
+				83B1A0F565A49267660A876A7B221C24 /* Support Files */,
+			);
+			path = DWAnimatedLabel;
+			sourceTree = "<group>";
+		};
+		F48B1E3AA81845BFC7DCCCF4A32E67D2 /* Pods-GigaChat */ = {
+			isa = PBXGroup;
+			children = (
+				3DBBA2A7A087F8310E46AB2740F47B48 /* Pods-GigaChat.modulemap */,
+				3989E50088CEE20753DE3AF24D32B91E /* Pods-GigaChat-acknowledgements.markdown */,
+				82A83F7A0FE64F0E6E9EF71C40222210 /* Pods-GigaChat-acknowledgements.plist */,
+				AE973632C8026D0A9D17578DE70F5E34 /* Pods-GigaChat-dummy.m */,
+				7ED5750665E8265CE7A77215CA946C89 /* Pods-GigaChat-frameworks.sh */,
+				0B572E88E94C393C22152690C1585829 /* Pods-GigaChat-Info.plist */,
+				1EC78441EDFFF48D4E2EC6EBA8952EE8 /* Pods-GigaChat-umbrella.h */,
+				71667FA1AB4DDE50D0BB221FB8BA3C5B /* Pods-GigaChat.debug.xcconfig */,
+				0481562D929B7E59552C0C3D2BA60943 /* Pods-GigaChat.release.xcconfig */,
+			);
+			name = "Pods-GigaChat";
+			path = "Target Support Files/Pods-GigaChat";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5E09E200622A5591919FCA39797259BC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F47CD0323F5A1E7AF969FE8B511865B /* DWAnimatedLabel.h in Headers */,
+				5D22F5D132317AB565F5377FF46F659C /* DWAnimatedLabel-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2706200CBDD4A835EDBAA3E6892B5F6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA6573063EB032B88A6F365E76404E9D /* Pods-GigaChat-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		670BD8CE390D7D6DB204EA26D001123B /* DWAnimatedLabel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA8EBDB7A7534448F5204A22779ACBA4 /* Build configuration list for PBXNativeTarget "DWAnimatedLabel" */;
+			buildPhases = (
+				5E09E200622A5591919FCA39797259BC /* Headers */,
+				C810673229ACDF0DC24F87764A3A2B23 /* Sources */,
+				1664682451B5B2947F37D76A566FA2A9 /* Frameworks */,
+				492BA7CBB7935A4B9AC4495FF191ABE2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DWAnimatedLabel;
+			productName = DWAnimatedLabel;
+			productReference = C5B3AA7481F2E2A217DB5A89EE960395 /* DWAnimatedLabel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9EF9421E342C263BD5DAC47C1AF41381 /* Pods-GigaChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE2F7FB56C49082C43A7414B8235DED9 /* Build configuration list for PBXNativeTarget "Pods-GigaChat" */;
+			buildPhases = (
+				A2706200CBDD4A835EDBAA3E6892B5F6 /* Headers */,
+				50B3912BD53C3ED67CB67DBFB76B8EE3 /* Sources */,
+				DB115B96C8FB1FE6273E1AD578770A10 /* Frameworks */,
+				BA3E411188059E33EDD5EE26AE98340B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE9F80567B65A032966DA0DA5D57FABD /* PBXTargetDependency */,
+			);
+			name = "Pods-GigaChat";
+			productName = Pods_GigaChat;
+			productReference = 74F2C0FB41F615A109D6E5F004547E90 /* Pods_GigaChat.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 802C3D4B07DBBAA2A2C90D378D871BC1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				670BD8CE390D7D6DB204EA26D001123B /* DWAnimatedLabel */,
+				9EF9421E342C263BD5DAC47C1AF41381 /* Pods-GigaChat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		492BA7CBB7935A4B9AC4495FF191ABE2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA3E411188059E33EDD5EE26AE98340B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50B3912BD53C3ED67CB67DBFB76B8EE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FADC9DD30053F0B8F2538B318DF9AF66 /* Pods-GigaChat-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C810673229ACDF0DC24F87764A3A2B23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E892AF946B11B3FA92130B6B15B5580 /* DWAnimatedLabel.swift in Sources */,
+				8F2FB222C94F0F10348757441610D5CD /* DWAnimatedLabel-dummy.m in Sources */,
+				7FC90948CDE071C428AFC4A4ADFB3975 /* DWAnimator.swift in Sources */,
+				489C4E8E9096D99E09D47F7D2D80D645 /* DWHollowLabel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE9F80567B65A032966DA0DA5D57FABD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DWAnimatedLabel;
+			target = 670BD8CE390D7D6DB204EA26D001123B /* DWAnimatedLabel */;
+			targetProxy = 35012DA836886D7A7503CFC131F9494A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		09909ECBA13E8F70A928465E7F7A9A92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		1AC41E2ADAE3A70A371E873AB68AC063 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71667FA1AB4DDE50D0BB221FB8BA3C5B /* Pods-GigaChat.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GigaChat/Pods-GigaChat-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GigaChat/Pods-GigaChat.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2DE0D8898245310716431F92FA4989FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		906EC2141C906DDC2FD541D2317B6407 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A1C832AD7EA9EB3A0D91BEBECB45D86 /* DWAnimatedLabel.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DWAnimatedLabel/DWAnimatedLabel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DWAnimatedLabel/DWAnimatedLabel-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DWAnimatedLabel/DWAnimatedLabel.modulemap";
+				PRODUCT_MODULE_NAME = DWAnimatedLabel;
+				PRODUCT_NAME = DWAnimatedLabel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.1;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B018633A835D71FA127497793BB3063B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45B1FA440F67A3032FD6AB59A66B9C61 /* DWAnimatedLabel.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DWAnimatedLabel/DWAnimatedLabel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DWAnimatedLabel/DWAnimatedLabel-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DWAnimatedLabel/DWAnimatedLabel.modulemap";
+				PRODUCT_MODULE_NAME = DWAnimatedLabel;
+				PRODUCT_NAME = DWAnimatedLabel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.1;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B929466E0D4A7C2537D69ACFC622AE56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0481562D929B7E59552C0C3D2BA60943 /* Pods-GigaChat.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GigaChat/Pods-GigaChat-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GigaChat/Pods-GigaChat.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09909ECBA13E8F70A928465E7F7A9A92 /* Debug */,
+				2DE0D8898245310716431F92FA4989FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA8EBDB7A7534448F5204A22779ACBA4 /* Build configuration list for PBXNativeTarget "DWAnimatedLabel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B018633A835D71FA127497793BB3063B /* Debug */,
+				906EC2141C906DDC2FD541D2317B6407 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE2F7FB56C49082C43A7414B8235DED9 /* Build configuration list for PBXNativeTarget "Pods-GigaChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AC41E2ADAE3A70A371E873AB68AC063 /* Debug */,
+				B929466E0D4A7C2537D69ACFC622AE56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

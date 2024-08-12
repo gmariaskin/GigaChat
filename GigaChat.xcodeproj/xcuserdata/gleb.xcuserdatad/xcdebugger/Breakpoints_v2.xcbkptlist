@@ -14,8 +14,8 @@
             filePath = "GigaChat/ChatScreen/ImageTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "loadImage(from:)"
             landmarkType = "7">
          </BreakpointContent>

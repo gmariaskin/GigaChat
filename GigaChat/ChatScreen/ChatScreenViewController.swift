@@ -24,6 +24,7 @@ final class ChatScreenViewController: UIViewController {
         obj.returnKeyType = .send
         obj.clearsOnInsertion = true
         obj.clearsOnBeginEditing = true
+        obj.tintColor = .white
         return obj
     }()
     
@@ -179,6 +180,7 @@ extension ChatScreenViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let text = textField.text, !text.isEmpty {
+            self.userTextField.isUserInteractionEnabled = false
             models.append(.text(text))
             chatTableView.reloadData()
             getResponse(input: text) { [weak self] result in
@@ -195,6 +197,7 @@ extension ChatScreenViewController: UITextFieldDelegate {
                                 DispatchQueue.main.async {
                                     self?.chatTableView.reloadData()
                                     self?.scrollToBottom()
+                                    self?.userTextField.isUserInteractionEnabled = true
                                 }
                             case .failure(let error):
                                 print("Failed to download image: \(error.localizedDescription)")
@@ -204,12 +207,14 @@ extension ChatScreenViewController: UITextFieldDelegate {
                         // Append text message if no image URL is found
                         self?.models.append(.text(output))
                         DispatchQueue.main.async {
+                            self?.userTextField.isUserInteractionEnabled = true
                             self?.chatTableView.reloadData()
                             self?.scrollToBottom()
                         }
                     }
                 case .failure:
                     print("Failed")
+                    self?.userTextField.isUserInteractionEnabled = true
                 }
             }
         }
@@ -242,16 +247,36 @@ extension ChatScreenViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.contentView.backgroundColor = UIColor.brandBG
                 cell.titleLabel.textAlignment = .left
                 cell.titleLabel.textColor = .white
+
             } else {
                 cell.contentView.backgroundColor = .brandBG
                 cell.titleLabel.textAlignment = .right
                 cell.titleLabel.textColor = .lightGray
             }
+            
+//            //Animating only the last response cell
+//            
+//            if indexPath.row == models.count - 1 && indexPath.row % 2 != 0 {
+//                cell.titleLabel.startAnimation(duration: 0.5, nil)
+//                      }
+//           
             return cell
             
         case .image(let url):
             let cell = tableView.dequeueReusableCell(withIdentifier: ImageTableViewCell.ID, for: indexPath) as! ImageTableViewCell
             cell.loadImage(from: url)
+            cell.sendButtonCallback = {
+                if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                    let imageToShare = [image]
+                    let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+                           activityViewController.popoverPresentationController?.sourceView = self.view
+                           
+                           // exclude some activity types from the list (optional)
+                           activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
+                  
+                           self.present(activityViewController, animated: true, completion: nil)
+                }
+            }
             return cell
         }
     }
@@ -262,10 +287,7 @@ extension ChatScreenViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch model {
         case .text(let text):
-            let label = UILabel()
-            label.text = text
-            label.numberOfLines = 0
-            return label.systemLayoutSizeFitting(CGSize(width: tableView.frame.width - 20, height: CGFloat.greatestFiniteMagnitude)).height + 20
+            return UITableView.automaticDimension
         case .image:
             return 200
         }

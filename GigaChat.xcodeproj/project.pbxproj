@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2A67075E6867980A37ACEC8 /* Pods_GigaChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84186F1BBAE707E7E0229BA /* Pods_GigaChat.framework */; };
 		F70001942C60D8F000A1A445 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F70001932C60D8F000A1A445 /* SnapKit */; settings = {ATTRIBUTES = (Required, ); }; };
 		F70001992C60DA4D00A1A445 /* UUIDKit in Frameworks */ = {isa = PBXBuildFile; productRef = F70001982C60DA4D00A1A445 /* UUIDKit */; };
 		F700019B2C60F25E00A1A445 /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700019A2C60F25E00A1A445 /* FileDownloader.swift */; };
@@ -22,10 +23,11 @@
 		F70821482C60283C00C1FA9E /* Jost-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F70821472C60283C00C1FA9E /* Jost-VariableFont_wght.ttf */; };
 		F708214A2C6028B300C1FA9E /* FontBuilder .swift in Sources */ = {isa = PBXBuildFile; fileRef = F70821492C6028B300C1FA9E /* FontBuilder .swift */; };
 		F708214D2C602E6000C1FA9E /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F708214C2C602E6000C1FA9E /* ChatTableViewCell.swift */; };
-		F70821502C602F9400C1FA9E /* CLTypingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F708214F2C602F9400C1FA9E /* CLTypingLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D603ED472AD248ECCF9E941 /* Pods-GigaChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigaChat.debug.xcconfig"; path = "Target Support Files/Pods-GigaChat/Pods-GigaChat.debug.xcconfig"; sourceTree = "<group>"; };
+		A84186F1BBAE707E7E0229BA /* Pods_GigaChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GigaChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F700019A2C60F25E00A1A445 /* FileDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloader.swift; sourceTree = "<group>"; };
 		F700019C2C60FF9800A1A445 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		F70821192C5FB7D300C1FA9E /* GigaChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GigaChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,7 +43,7 @@
 		F70821472C60283C00C1FA9E /* Jost-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		F70821492C6028B300C1FA9E /* FontBuilder .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FontBuilder .swift"; sourceTree = "<group>"; };
 		F708214C2C602E6000C1FA9E /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
-		F708214F2C602F9400C1FA9E /* CLTypingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLTypingLabel.swift; sourceTree = "<group>"; };
+		F85581AF62F1E45B2A527A10 /* Pods-GigaChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigaChat.release.xcconfig"; path = "Target Support Files/Pods-GigaChat/Pods-GigaChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +53,37 @@
 			files = (
 				F70001992C60DA4D00A1A445 /* UUIDKit in Frameworks */,
 				F70001942C60D8F000A1A445 /* SnapKit in Frameworks */,
+				D2A67075E6867980A37ACEC8 /* Pods_GigaChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A74107D785CCB60DFCE5906 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D603ED472AD248ECCF9E941 /* Pods-GigaChat.debug.xcconfig */,
+				F85581AF62F1E45B2A527A10 /* Pods-GigaChat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8049CB2FC00B297A65416AC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A84186F1BBAE707E7E0229BA /* Pods_GigaChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F70821102C5FB7D300C1FA9E = {
 			isa = PBXGroup;
 			children = (
 				F708211B2C5FB7D300C1FA9E /* GigaChat */,
 				F708211A2C5FB7D300C1FA9E /* Products */,
+				3A74107D785CCB60DFCE5906 /* Pods */,
+				8049CB2FC00B297A65416AC6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,7 +135,6 @@
 				F70821422C5FF5C300C1FA9E /* Token.swift */,
 				F70821442C5FFB0100C1FA9E /* ChatResponse.swift */,
 				F70821492C6028B300C1FA9E /* FontBuilder .swift */,
-				F708214F2C602F9400C1FA9E /* CLTypingLabel.swift */,
 				F700019A2C60F25E00A1A445 /* FileDownloader.swift */,
 			);
 			path = "Services ";
@@ -134,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F708212D2C5FB7D500C1FA9E /* Build configuration list for PBXNativeTarget "GigaChat" */;
 			buildPhases = (
+				21BCEB145BEA726B15C4C687 /* [CP] Check Pods Manifest.lock */,
 				F70821152C5FB7D300C1FA9E /* Sources */,
 				F70821162C5FB7D300C1FA9E /* Frameworks */,
 				F70821172C5FB7D300C1FA9E /* Resources */,
+				6C412D570C719D3219DD1957 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -201,12 +224,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21BCEB145BEA726B15C4C687 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GigaChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C412D570C719D3219DD1957 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GigaChat/Pods-GigaChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GigaChat/Pods-GigaChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GigaChat/Pods-GigaChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F70821152C5FB7D300C1FA9E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F70821502C602F9400C1FA9E /* CLTypingLabel.swift in Sources */,
 				F708211D2C5FB7D300C1FA9E /* AppDelegate.swift in Sources */,
 				F70821432C5FF5C300C1FA9E /* Token.swift in Sources */,
 				F700019D2C60FF9800A1A445 /* ImageTableViewCell.swift in Sources */,
@@ -271,7 +335,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -334,7 +398,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -355,6 +419,7 @@
 		};
 		F708212E2C5FB7D500C1FA9E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D603ED472AD248ECCF9E941 /* Pods-GigaChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -388,6 +453,7 @@
 		};
 		F708212F2C5FB7D500C1FA9E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F85581AF62F1E45B2A527A10 /* Pods-GigaChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
