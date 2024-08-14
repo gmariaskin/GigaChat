@@ -84,16 +84,30 @@ class ImageTableViewCell: UITableViewCell {
         }
     }
     
-    func loadImage(from url: URL) {
-        
-            DispatchQueue.global().async { [weak self] in
-                if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+//    func loadImage(from url: URL) {
+//        
+//            DispatchQueue.global().async { [weak self] in
+//                if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+//                    print("✅Image exists")
+//                    DispatchQueue.main.async {
+//                        self?.image.image = image
+//                    }
+//                }
+//            }
+//    }\
+    
+    func loadImage(from url: URL) async {
+            do {
+                let (data, _) = try await URLSession.shared.data(from: url)
+                if let image = UIImage(data: data) {
                     print("✅Image exists")
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async { [weak self] in
                         self?.image.image = image
                     }
                 }
+            } catch {
+                print("❌Failed to load image: \(error)")
             }
-    }
+        }
 }
 

@@ -264,7 +264,12 @@ extension ChatScreenViewController: UITableViewDelegate, UITableViewDataSource {
             
         case .image(let url):
             let cell = tableView.dequeueReusableCell(withIdentifier: ImageTableViewCell.ID, for: indexPath) as! ImageTableViewCell
-            cell.loadImage(from: url)
+            
+            Task {
+                await cell.loadImage(from: url)
+                print("✅Image loaded to cell")
+            }
+
             cell.sendButtonCallback = {
                 if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
                     let imageToShare = [image]
