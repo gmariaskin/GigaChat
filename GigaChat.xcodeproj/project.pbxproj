@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A4719B3C2C82695200F3440D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4719B3B2C82695200F3440D /* ChatViewController.swift */; };
+		A4719B3F2C826A8E00F3440D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4719B3E2C826A8E00F3440D /* Constants.swift */; };
+		A4719B422C826EED00F3440D /* UIView+AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4719B412C826EED00F3440D /* UIView+AddSubviews.swift */; };
+		A4719B472C8272FE00F3440D /* SceneBuildManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4719B462C8272FE00F3440D /* SceneBuildManager.swift */; };
+		A4719B492C8274CE00F3440D /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4719B482C8274CE00F3440D /* ChatPresenter.swift */; };
 		D2A67075E6867980A37ACEC8 /* Pods_GigaChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84186F1BBAE707E7E0229BA /* Pods_GigaChat.framework */; };
 		F70001942C60D8F000A1A445 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F70001932C60D8F000A1A445 /* SnapKit */; settings = {ATTRIBUTES = (Required, ); }; };
 		F70001992C60DA4D00A1A445 /* UUIDKit in Frameworks */ = {isa = PBXBuildFile; productRef = F70001982C60DA4D00A1A445 /* UUIDKit */; };
@@ -16,7 +21,6 @@
 		F708211F2C5FB7D300C1FA9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F708211E2C5FB7D300C1FA9E /* SceneDelegate.swift */; };
 		F70821262C5FB7D500C1FA9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F70821252C5FB7D500C1FA9E /* Assets.xcassets */; };
 		F70821292C5FB7D500C1FA9E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F70821282C5FB7D500C1FA9E /* Base */; };
-		F70821382C5FBB4000C1FA9E /* ChatScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70821372C5FBB4000C1FA9E /* ChatScreenViewController.swift */; };
 		F708213B2C5FC13700C1FA9E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F708213A2C5FC13700C1FA9E /* APIClient.swift */; };
 		F70821432C5FF5C300C1FA9E /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70821422C5FF5C300C1FA9E /* Token.swift */; };
 		F70821452C5FFB0100C1FA9E /* ChatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70821442C5FFB0100C1FA9E /* ChatResponse.swift */; };
@@ -27,6 +31,11 @@
 
 /* Begin PBXFileReference section */
 		9D603ED472AD248ECCF9E941 /* Pods-GigaChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigaChat.debug.xcconfig"; path = "Target Support Files/Pods-GigaChat/Pods-GigaChat.debug.xcconfig"; sourceTree = "<group>"; };
+		A4719B3B2C82695200F3440D /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		A4719B3E2C826A8E00F3440D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A4719B412C826EED00F3440D /* UIView+AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubviews.swift"; sourceTree = "<group>"; };
+		A4719B462C8272FE00F3440D /* SceneBuildManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneBuildManager.swift; sourceTree = "<group>"; };
+		A4719B482C8274CE00F3440D /* ChatPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
 		A84186F1BBAE707E7E0229BA /* Pods_GigaChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GigaChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F700019A2C60F25E00A1A445 /* FileDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloader.swift; sourceTree = "<group>"; };
 		F700019C2C60FF9800A1A445 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
@@ -36,7 +45,6 @@
 		F70821252C5FB7D500C1FA9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F70821282C5FB7D500C1FA9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F708212A2C5FB7D500C1FA9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F70821372C5FBB4000C1FA9E /* ChatScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreenViewController.swift; sourceTree = "<group>"; };
 		F708213A2C5FC13700C1FA9E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		F70821422C5FF5C300C1FA9E /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		F70821442C5FFB0100C1FA9E /* ChatResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatResponse.swift; sourceTree = "<group>"; };
@@ -77,6 +85,77 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A4719B362C82690400F3440D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A4719B372C82691200F3440D /* Chat */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		A4719B372C82691200F3440D /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				A4719B382C82691C00F3440D /* Models */,
+				A4719B392C82692200F3440D /* Views */,
+				A4719B3A2C82692700F3440D /* Presenter */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		A4719B382C82691C00F3440D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A4719B392C82692200F3440D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4719B3B2C82695200F3440D /* ChatViewController.swift */,
+				F708214C2C602E6000C1FA9E /* ChatTableViewCell.swift */,
+				F700019C2C60FF9800A1A445 /* ImageTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A4719B3A2C82692700F3440D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A4719B482C8274CE00F3440D /* ChatPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A4719B3D2C826A7200F3440D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F70821392C5FC12800C1FA9E /* Services  */,
+				F70821462C60283100C1FA9E /* Fonts */,
+				A4719B452C8272E800F3440D /* Managers */,
+				A4719B402C826EE200F3440D /* Extensions */,
+				A4719B3E2C826A8E00F3440D /* Constants.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A4719B402C826EE200F3440D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A4719B412C826EED00F3440D /* UIView+AddSubviews.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A4719B452C8272E800F3440D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A4719B462C8272FE00F3440D /* SceneBuildManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		F70821102C5FB7D300C1FA9E = {
 			isa = PBXGroup;
 			children = (
@@ -98,10 +177,9 @@
 		F708211B2C5FB7D300C1FA9E /* GigaChat */ = {
 			isa = PBXGroup;
 			children = (
-				F70821462C60283100C1FA9E /* Fonts */,
 				F70821302C5FB7E300C1FA9E /* Application */,
-				F70821362C5FBB2500C1FA9E /* ChatScreen */,
-				F70821392C5FC12800C1FA9E /* Services  */,
+				A4719B3D2C826A7200F3440D /* Core */,
+				A4719B362C82690400F3440D /* Screens */,
 				F70821252C5FB7D500C1FA9E /* Assets.xcassets */,
 				F70821272C5FB7D500C1FA9E /* LaunchScreen.storyboard */,
 				F708212A2C5FB7D500C1FA9E /* Info.plist */,
@@ -116,16 +194,6 @@
 				F708211E2C5FB7D300C1FA9E /* SceneDelegate.swift */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		F70821362C5FBB2500C1FA9E /* ChatScreen */ = {
-			isa = PBXGroup;
-			children = (
-				F70821372C5FBB4000C1FA9E /* ChatScreenViewController.swift */,
-				F708214C2C602E6000C1FA9E /* ChatTableViewCell.swift */,
-				F700019C2C60FF9800A1A445 /* ImageTableViewCell.swift */,
-			);
-			path = ChatScreen;
 			sourceTree = "<group>";
 		};
 		F70821392C5FC12800C1FA9E /* Services  */ = {
@@ -273,14 +341,18 @@
 			files = (
 				F708211D2C5FB7D300C1FA9E /* AppDelegate.swift in Sources */,
 				F70821432C5FF5C300C1FA9E /* Token.swift in Sources */,
+				A4719B3C2C82695200F3440D /* ChatViewController.swift in Sources */,
+				A4719B492C8274CE00F3440D /* ChatPresenter.swift in Sources */,
 				F700019D2C60FF9800A1A445 /* ImageTableViewCell.swift in Sources */,
 				F70821452C5FFB0100C1FA9E /* ChatResponse.swift in Sources */,
-				F70821382C5FBB4000C1FA9E /* ChatScreenViewController.swift in Sources */,
 				F708211F2C5FB7D300C1FA9E /* SceneDelegate.swift in Sources */,
+				A4719B472C8272FE00F3440D /* SceneBuildManager.swift in Sources */,
 				F700019B2C60F25E00A1A445 /* FileDownloader.swift in Sources */,
 				F708214D2C602E6000C1FA9E /* ChatTableViewCell.swift in Sources */,
 				F708214A2C6028B300C1FA9E /* FontBuilder .swift in Sources */,
 				F708213B2C5FC13700C1FA9E /* APIClient.swift in Sources */,
+				A4719B422C826EED00F3440D /* UIView+AddSubviews.swift in Sources */,
+				A4719B3F2C826A8E00F3440D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +497,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 22496L8ZUC;
+				DEVELOPMENT_TEAM = 83A3HB7D55;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GigaChat/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -459,7 +531,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 22496L8ZUC;
+				DEVELOPMENT_TEAM = 83A3HB7D55;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GigaChat/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";

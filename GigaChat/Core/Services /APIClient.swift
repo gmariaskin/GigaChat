@@ -1,18 +1,22 @@
 import Foundation
 import UUIDKit
 
-class APIClient {
-    
-    //MARK: Properties
-    
+protocol APIManagerProtocol {
+    func sendMessage(text: String,
+                     completionHandler: @escaping (Result<MessageResponse,
+                                                   Error>) -> Void)
+    var userToken: String? { get }
+}
+
+class APIClient: APIManagerProtocol {
+    //MARK: - Properties
     static let shared = APIClient()
-    
     private let clientID = "c632f50e-6814-4092-9e06-dbc99c5c29a8"
     private let clientSecret = "1feaaf86-2b70-468f-8131-a341e94396aa"
     private let authorizationData = "YzYzMmY1MGUtNjgxNC00MDkyLTllMDYtZGJjOTljNWMyOWE4OjdkMmUzMGZhLTdhNjQtNDYxZS04ZWZmLTEwN2FkZjhmODQ5Ng=="
     private let tokenURL = URL(string: "https://ngw.devices.sberbank.ru:9443/api/v2/oauth")!
     private let scope = "GIGACHAT_API_PERS"
-    var userToken: String?
+    private(set) var userToken: String?
     
     private let messageURL = URL(string: "https://gigachat.devices.sberbank.ru/api/v1/chat/completions")!
     
@@ -20,9 +24,8 @@ class APIClient {
     
     var chatHistory: [[String:String]] = []
     
-    //MARK: Lifecycle
-    
-    private init() {
+    //MARK: - Lifecycle
+    init() {
         setupTokenRefreshTimer()
     }
     
@@ -32,12 +35,12 @@ class APIClient {
         tokenRefreshTimer = nil
     }
     
-    //MARK: Methods
-    
+    //MARK: - private Funcs
     private func setupTokenRefreshTimer() {
         getToken { success in
             if success {
-                self.tokenRefreshTimer = Timer.scheduledTimer(withTimeInterval: 30 * 60, repeats: true) { _ in
+                self.tokenRefreshTimer = Timer.scheduledTimer(withTimeInterval: 30 * 60,
+                                                              repeats: true) { _ in
                     self.getToken { _ in }
                 }
             } else {
@@ -47,18 +50,24 @@ class APIClient {
     }
     
     private func getToken(completion: @escaping (Bool) -> Void) {
-        
         let requestID = UUIDv4().description
         var request = URLRequest(url: tokenURL)
         request.httpMethod = "POST"
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue(requestID, forHTTPHeaderField: "RqUID")
-        request.setValue("Basic \(authorizationData)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/x-www-form-urlencoded",
+                         forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json",
+                         forHTTPHeaderField: "Accept")
+        request.setValue(requestID,
+                         forHTTPHeaderField: "RqUID")
+        request.setValue("Basic \(authorizationData)",
+                         forHTTPHeaderField: "Authorization")
         request.httpBody = "scope=\(scope)".data(using: .utf8)!
         
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
+        URLSession.shared.dataTask(with: request) { data,
+            response,
+            error in
+            guard let data = data else {
+                
                 print("❌Error: \(error!.localizedDescription)")
                 completion(false)
                 return
@@ -81,7 +90,8 @@ class APIClient {
         }.resume()
     }
     
-    func sendMessage(text: String, completionHandler: @escaping (Result<MessageResponse, Error>) -> Void) {
+    func sendMessage(text: String,
+                     completionHandler: @escaping (Result<MessageResponse, Error>) -> Void) {
         guard let token = userToken else {
             // Token is not available, fetch it first
             getToken { success in
@@ -141,7 +151,7 @@ class APIClient {
                         FileDownloader.shared.downloadImage(withID: imageID, token: token) { [weak self] result in
                             switch result {
                             case .success(let fileURL):
-                            
+                        
                                 print("✅Image downloaded to: \(fileURL)")
                             
                             case .failure(let error):
@@ -164,7 +174,7 @@ class APIClient {
         }.resume()
     }
     
-    func containsWord(_ word: String, in string: String) -> Bool {
+    private func containsWord(_ word: String, in string: String) -> Bool {
         let pattern = "\\b\(word)\\b"
         return string.range(of: pattern, options: .regularExpression) != nil
     }
