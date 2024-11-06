@@ -1,9 +1,4 @@
-//
-//  Token.swift
-//  GigaChat
-//
-//  Created by Gleb on 04.08.2024.
-//
+
 
 import Foundation
 

@@ -96,6 +96,7 @@
 		A4719B372C82691200F3440D /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				F7D5EE0A2C973D7300DD1100 /* Extensions */,
 				A4719B382C82691C00F3440D /* Models */,
 				A4719B392C82692200F3440D /* Views */,
 				A4719B3A2C82692700F3440D /* Presenter */,
@@ -214,6 +215,13 @@
 				F70821472C60283C00C1FA9E /* Jost-VariableFont_wght.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F7D5EE0A2C973D7300DD1100 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

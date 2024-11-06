@@ -1,9 +1,3 @@
-//
-//  ChatPresenter.swift
-//  GigaChat
-//
-//  Created by Nikita Stepanov on 31.08.2024.
-//
 
 import Foundation
 import UIKit

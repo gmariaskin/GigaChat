@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: windowScene)
-        self.window?.rootViewController = SceneBuildManager().buidChatScreen()
+        self.window?.rootViewController = SceneBuildManager().buildChatScreen()
         self.window?.makeKeyAndVisible()
     }
 

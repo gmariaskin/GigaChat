@@ -1,9 +1,3 @@
-//
-//  ChatTableViewCell.swift
-//  GigaChat
-//
-//  Created by Gleb on 05.08.2024.
-//
 
 import UIKit
 import DWAnimatedLabel

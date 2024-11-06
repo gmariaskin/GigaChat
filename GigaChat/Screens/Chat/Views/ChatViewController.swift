@@ -1,9 +1,4 @@
-//
-//  ChatViewController.swift
-//  GigaChat
-//
-//  Created by Nikita Stepanov on 30.08.2024.
-//
+
 
 import Foundation
 import UIKit
@@ -14,7 +9,7 @@ protocol ChatViewInputProtocol: NSObject {
     func reloadTable()
 }
 
-final class ChatViewController: UIViewController {
+final class ChatViewController: UIViewController, UITableViewDelegate {
     // MARK: - UI Components
     private lazy var responseView: UIView = makeResponseView()
     private lazy var userTextField: UITextField = makeUserTextField()
@@ -169,9 +164,7 @@ extension ChatViewController {
     }
 }
 
-// to do - вынести по файлам
 
-// MARK: - UITextFieldDelegate extension
 extension ChatViewController: UITextFieldDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>,
@@ -195,8 +188,4 @@ extension ChatViewController: UITextFieldDelegate {
         }
         return true
     }
-}
-
-extension ChatViewController: UITableViewDelegate {
-    
 }

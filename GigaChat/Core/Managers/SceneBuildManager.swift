@@ -1,14 +1,8 @@
-//
-//  SceneBuildManager.swift
-//  GigaChat
-//
-//  Created by Nikita Stepanov on 31.08.2024.
-//
 
 import Foundation
 
 protocol SceneBuildManagerProtocol {
-    func buidChatScreen() -> ChatViewController
+    func buildChatScreen() -> ChatViewController
 }
 
 final class SceneBuildManager {
@@ -20,7 +14,7 @@ final class SceneBuildManager {
 }
 
 extension SceneBuildManager: SceneBuildManagerProtocol {
-    func buidChatScreen() -> ChatViewController {
+    func buildChatScreen() -> ChatViewController {
         let viewController = ChatViewController()
         let presenter = ChatPresenter(viewController: viewController,
                                       apiManager: apiManager)
